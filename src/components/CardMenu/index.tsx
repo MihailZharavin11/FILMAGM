@@ -1,8 +1,12 @@
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import React from "react";
+import React, { ReactNode } from "react";
 
-export const CardMenu = () => {
+type CardMenuProps = {
+  children: ReactNode;
+};
+
+export const CardMenu: React.FC<CardMenuProps> = ({ children }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -46,7 +50,7 @@ export const CardMenu = () => {
           },
         }}
       >
-        <MenuItem onClick={() => {}}>Add</MenuItem>
+        {children}
       </Menu>
     </>
   );

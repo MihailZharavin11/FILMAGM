@@ -1,10 +1,16 @@
-import { Card } from "@mui/material";
+import { Card, MenuItem } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardMenu } from "../CardMenu";
+import { Movie } from "../types";
+
+type MovieCardProps = {
+  movie: Movie;
+  onCardSelect: () => void;
+};
 
 const CardInfo = styled(CardContent)(({ theme }) => ({
   "$:last-child": {
@@ -12,22 +18,27 @@ const CardInfo = styled(CardContent)(({ theme }) => ({
   },
 }));
 
-export const MovieCard = () => {
+export const MovieCard: React.FC<MovieCardProps> = ({
+  movie,
+  onCardSelect,
+}) => {
   return (
     <Card sx={{ width: 210, position: "relative" }}>
-      <CardMenu />
+      <CardMenu>
+        <MenuItem onClick={() => {}}>Add</MenuItem>
+      </CardMenu>
       <CardMedia
         component="img"
         height="250"
-        image="https://www.themoviedb.org/t/p/w220_and_h330_face/69loIrm9JPpPRE3Akw4yRoitSYn.jpg"
-        alt="Paella dish"
+        image={movie.image}
+        alt={movie.title}
       />
       <CardInfo>
         <Typography variant="h5" gutterBottom component="div">
-          The last of us
+          {movie.title}
         </Typography>
         <Typography variant="subtitle1" gutterBottom component="div">
-          Apr 2011
+          {new Date(movie.releaseDate).toString()}
         </Typography>
       </CardInfo>
     </Card>

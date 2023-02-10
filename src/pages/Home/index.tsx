@@ -1,6 +1,7 @@
 import { Box, Grid, Paper, styled } from "@mui/material";
 import React from "react";
 import { MovieCard } from "../../components";
+import { moviesData } from "../../stories/stub";
 
 export const Home = () => {
   const SelectedMovies = styled(Paper)(({ theme }) => ({
@@ -31,7 +32,12 @@ export const Home = () => {
                   md={4}
                   lg={3}
                 >
-                  <MovieCard />
+                  <MovieCard
+                    movie={moviesData[0]}
+                    onCardSelect={() => {
+                      console.log("card Select");
+                    }}
+                  />
                 </Grid>
                 <Grid
                   display={"flex"}
@@ -41,7 +47,12 @@ export const Home = () => {
                   md={4}
                   lg={3}
                 >
-                  <MovieCard />
+                  <MovieCard
+                    movie={moviesData[0]}
+                    onCardSelect={() => {
+                      console.log("card Select");
+                    }}
+                  />
                 </Grid>
                 <Grid
                   display={"flex"}
@@ -51,7 +62,12 @@ export const Home = () => {
                   md={4}
                   lg={3}
                 >
-                  <MovieCard />
+                  <MovieCard
+                    movie={moviesData[0]}
+                    onCardSelect={() => {
+                      console.log("card Select");
+                    }}
+                  />
                 </Grid>
                 <Grid
                   display={"flex"}
@@ -61,7 +77,12 @@ export const Home = () => {
                   md={4}
                   lg={3}
                 >
-                  <MovieCard />
+                  <MovieCard
+                    movie={moviesData[0]}
+                    onCardSelect={() => {
+                      console.log("card Select");
+                    }}
+                  />
                 </Grid>
               </Grid>
             </Box>
