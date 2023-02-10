@@ -20,7 +20,7 @@ export const MovieCardSelected: React.FC<MovieCardSelectedProps> = ({
   onCardDelete,
 }) => {
   return (
-    <Card sx={{ display: "flex", position: "relative" }}>
+    <Card sx={{ display: "flex", position: "relative", width: "100%" }}>
       <CardMenu>
         <MenuItem onClick={() => {}}>Delete</MenuItem>
       </CardMenu>
